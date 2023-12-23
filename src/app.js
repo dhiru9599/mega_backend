@@ -1,4 +1,4 @@
-import { Express, urlencoded } from "express";
+import Express from "express";
 import cookieParser from "cookie-parser";
 import cors from "cors"
 
@@ -13,6 +13,12 @@ app.use(Express.json({limit:"16kb"}))
 app.use(Express.urlencoded({extended:true,limit:"16kb"}))
 app.use(Express.static("public"))
 app.use(cookieParser())
+
+//routes import
+import userRoutes from './routes/user.routes.js'
+//routes declarations
+
+app.use("/api/v1/users",userRoutes)
 
 
 export{app}

@@ -10,9 +10,9 @@ import { app } from './app.js';
 connectDB()
 .then(()=>{
   app.listen(process.env.PORT||5000,()=>{
-    console.log(`server is running on Prt ${process.env.PORT}`);
+    console.log(`server is running on P0rt ${process.env.PORT}`);
   })
 })
-.catch((err),()=>{
+.catch((err)=>{
   console.log("mongodb connection failed!!!!",err);
 })
